@@ -1,1 +1,30 @@
-<p>recipes works!</p>
+<h1>tábla w3-ról lopva</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Difficulty</th>
+            <th>Rating</th>
+            <th>MealType</th>
+            <th>Szerkesztés</th>
+            <th>Megtekintés</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (recipe of recipes; track $index) {
+            <tr>
+                <td>{{recipe.id}}</td>
+                <td>{{recipe.name}}</td>
+                <td>{{recipe.difficulty}}</td>
+                <td>{{recipe.rating}}</td>
+                <td>{{recipe.mealType}}</td>
+                <td><button (click)="nav(recipe.id)">Szerkesztés</button></td>
+                <td><button (click)="nav(recipe.id, true)">Megtekintés</button></td>
+            </tr>
+            <!-- receptek id-ját, nevét, nehézségét, értékelését és a konyha típusát ("cuisine") -->
+        }
+    </tbody>
+</table>
+
+<router-outlet></router-outlet>

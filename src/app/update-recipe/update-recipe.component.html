@@ -1,1 +1,33 @@
-<p>update-recipe works!</p>
+<form [formGroup]="recipeForm">
+    <div>
+        <label>Name:</label>
+        <input formControlName="name">
+        @if(recipeForm.controls['name'].invalid) {
+            <p class="error">A név megadása kötelező</p> 
+        }
+    </div>
+    <div>
+        <label>prepTimeMinutes:</label>
+        <input formControlName="preptime">
+        @if(recipeForm.controls['preptime'].invalid) {
+            <p class="error">A prepTimeMinutes kötelező, és minimum 5-nek kell lennie</p>
+        }
+    </div>
+    <div>
+        <label >cookTimeMinutes:</label>
+        <input formControlName="cooktime">
+        @if(recipeForm.controls['cooktime'].invalid) {
+            <p class="error">A cookTimeMinutes kötelező, és minimum 5-nek kell lennie</p>
+        }
+    </div>
+    <div>
+        <label>Cuisine:</label>
+        <input formControlName="cuisine">
+        @if(recipeForm.controls['cuisine'].invalid) {
+            <p class="error">A cuisine típusa megadása kötelező</p>
+        }
+    </div>
+    <button (click)="submit()">Save</button>
+</form>
+
+

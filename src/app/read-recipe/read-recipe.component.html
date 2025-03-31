@@ -1,1 +1,26 @@
-<p>read-recipe works!</p>
+<form [formGroup]="recipeForm">
+    <div>
+        <label>Id:</label>
+        <input formControlName="id">
+    </div>
+    <div>
+        <label>Name:</label>
+        <input formControlName="name">
+      </div>
+    <div>
+        <label>Difficulty:</label>
+        <input formControlName="difficulty">
+
+    </div>
+    <div>
+        <label >Rating:</label>
+        <input formControlName="rating">
+        
+    </div>
+    <div>
+        <label>Mealtype:</label>
+        <input formControlName="mealtype">
+      </div>
+</form>
+
+
